@@ -1,2 +1,1 @@
-# mindcircuit14
-Batch14 project repo
+# mindcircuit13 - SAMPLE APP
