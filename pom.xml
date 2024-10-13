@@ -16,7 +16,7 @@
 
 	<distributionManagement>
 		 <snapshotRepository>
-		    <id>NexusSnapshotRepo</id>
+		    <id>NexusRepo</id>
 		    <url>http://3.92.178.117:8081/repository/Santhosh-snapshot/</url>
 		 </snapshotRepository>
 		
