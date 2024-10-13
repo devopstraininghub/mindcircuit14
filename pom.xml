@@ -5,7 +5,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>mindcircuitbatch14</artifactId>
-    <version>2.246</version>
+    <version>8.2.0</version>
     <packaging>war</packaging>
 
 	<properties>
@@ -16,13 +16,13 @@
 
 	<distributionManagement>
 		 <snapshotRepository>
-		    <id>NexusRepo</id>
-		    <url>http://100.25.155.112:8081/repository/mc-snapshot/</url>
+		    <id>NexusSnapshotRepo</id>
+		    <url>http://3.92.178.117:8081/repository/Santhosh-snapshot/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>NexusRepo</id>
-		    <url>http://100.25.155.112:8081/repository/mc-release/</url>
+		    <url>http://3.92.178.117:8081/repository/Santhosh-release/</url>
 		</repository>
   	</distributionManagement>
 
