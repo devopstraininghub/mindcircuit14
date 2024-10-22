@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	
+	tools {
+	maven 'maven_3.9.9'
+	}
 
     stages {
         stage('CLONE SCM') {
@@ -19,7 +23,7 @@ pipeline {
 	stage('DEPLOY to TOMCAT') {
             steps {
                 echo 'Deploy artifacts to TOMCAT web server'
-				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://ec2-54-237-230-110.compute-1.amazonaws.com:8091/')], contextPath: 'Facebook', war: '**/*.war'
+				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.227.47.119:8091/')], contextPath: 'mcfbapp', war: '**/*.war'
             }
         }
 		
