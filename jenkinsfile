@@ -16,7 +16,9 @@ pipeline {
 	stage('BUILD ARTIFACT') {
             steps {
                 echo 'Building project with Maven'
+
 				sh 'mvn clean install'
+				
             }
         }
 		
@@ -24,6 +26,7 @@ pipeline {
             steps {
                 echo 'Deploy artifacts to TOMCAT web server'
 				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.227.47.119:8091/')], contextPath: 'mcfbapp', war: '**/*.war'
+
             }
         }
 		

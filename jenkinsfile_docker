@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+	
+	tools{
+	 maven 'maven_3.9.9'
+	}
+
+    stages {
+        stage('GIT CLONE SCM') {
+            steps {
+			    echo "CLONING code from Github repo"
+               git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit14.git'
+            }
+        }
+		
+        stage('BUILD ') {
+            steps {
+                echo "Building code "
+				sh 'mvn clean install'
+				
+            }
+        }
+
+        stage('TOMCAT DEPLOY') {
+            steps {
+                echo "Deploying war file to tomcat"
+				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://3.82.69.109:8091/')], contextPath: 'mcfbapp', war: '**/*.war'
+            }
+        }		
+		
+    }
+}
