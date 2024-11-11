@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fbdeploy
+  labels:
+    app: facebook
+spec:
+  selector:
+    matchLabels:
+      app: facebook 
+  replicas: 3  
+  template:
+    metadata:
+      name: fbpod
+      labels:
+        app: facebook
+    spec:
+      containers:
+        - name: fbcont
+          image: devopshubg333/batch14:mcappimag
+          ports:
+            - containerPort: 8080
+
