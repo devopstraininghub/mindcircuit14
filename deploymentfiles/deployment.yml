@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: devopshubg333/batch14:mcappimag
+          image: devopshubg333/batch14:pythonapp
           ports:
             - containerPort: 8080
 
