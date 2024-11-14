@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: Kadarlasanthosh/Santhosh-B14-MC:mcappimg
+          image: kadarlasanthosh/santhosh_repo:mcapp
           ports:
             - containerPort: 8080
 
