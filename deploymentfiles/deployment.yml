@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: devopshubg333/batch14:mcappimag
+          image: Kadarlasanthosh/Santhosh-B14-MC:mcappimg
           ports:
             - containerPort: 8080
 
