@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: fb-svc 
   labels:
-    app: facebook2
+    app: facebook
 
 spec:
   type: LoadBalancer
