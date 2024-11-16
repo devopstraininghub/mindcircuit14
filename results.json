@@ -1,0 +1,166 @@
+[
+  {
+    "Target": "devopshubg333/batch14:3 (ubuntu 24.04)",
+    "Type": "ubuntu"
+  },
+  {
+    "Target": "usr/local/tomcat/bin/commons-daemon.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/bin/tomcat-juli.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/annotations-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina-ant.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina-ha.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina-ssi.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina-storeconfig.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina-tribes.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/catalina.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/ecj-4.33.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/el-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/jakartaee-migration-1.0.8-shaded.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/jasper-el.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/jasper.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/jaspic-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/jsp-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/servlet-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-coyote-ffm.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-coyote.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-dbcp.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-cs.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-de.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-es.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-fr.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-ja.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-ko.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-pt-BR.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-ru.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-i18n-zh-CN.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-jdbc.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-jni.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-util-scan.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-util.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/tomcat-websocket.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/websocket-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/lib/websocket-client-api.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/webapps.dist/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5-migrated-0.0.1.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/webapps.dist/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5-migrated-0.0.1.jar",
+    "Type": "jar"
+  },
+  {
+    "Target": "usr/local/tomcat/webapps/ROOT.war",
+    "Type": "jar"
+  }
+]
