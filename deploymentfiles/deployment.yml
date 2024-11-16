@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: devopshubg333/batch14:8
+          image: devopshubg333/batch14:9
           ports:
             - containerPort: 8080
 
