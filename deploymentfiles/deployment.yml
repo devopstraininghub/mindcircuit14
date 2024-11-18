@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: kadarlasanthosh/santhosh_repo:pythonapp
+          image: kadarlasanthosh/santhosh_repo:10
           ports:
             - containerPort: 8080
 
