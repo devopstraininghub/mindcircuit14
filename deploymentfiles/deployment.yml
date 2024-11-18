@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: kadarlasanthosh/santhosh_repo:15
+          image: kadarlasanthosh/santhosh_repo:16
           ports:
             - containerPort: 8080
 
