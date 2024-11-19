@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: fbcont
-          image: shivakumarchigiri/mydocker:pythonapp
+          image: devopshubg333/batch14:tag
           ports:
             - containerPort: 8080
 
