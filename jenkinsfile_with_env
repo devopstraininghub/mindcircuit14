@@ -1,0 +1,95 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven3'
+    }
+
+    environment {
+        GIT_REPO_NAME = "mindcircuit14"
+        GIT_USER_NAME = "devopstraininghub"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        GITHUB_TOKEN = credentials('githubtoken')
+    }
+
+    stages {
+        stage('git checkout') {
+            steps {
+                echo 'Cloning GIT HUB Repo'
+                git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit14.git'
+            }
+        }
+
+        stage('sonar scan') {
+            steps {
+                echo 'scanning project'
+                sh 'ls -ltrh'
+                sh ''' mvn sonar:sonar \\
+                      -Dsonar.host.url=http://54.147.225.123:9000 \\
+                      -Dsonar.login=squ_b511ba40dcf78c0beeca7dc8e3375b1304ddbe5a'''
+            }
+        }
+
+        stage('Build Artifact') {
+            steps {
+                echo 'Building Artifact'
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Docker Image') {
+            steps {
+                echo 'Building Docker Image'
+                sh 'docker build -t devopshubg333/batch14:${BUILD_NUMBER} -f Dockerfile .'
+            }
+        }
+
+        stage('Docker Image Scan') {
+            steps {
+                echo 'Scanning Docker Image'
+                sh "trivy image --format json --output results.json devopshubg333/batch14:${BUILD_NUMBER}"
+            }
+        }
+
+        stage('Push to Dockerhub') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'DOCKERHUB_CREDENTIALS', variable: 'dockerhub')]) {
+                        sh 'docker login -u devopshubg333 -p ${dockerhub}'
+                    }
+                    sh 'docker push devopshubg333/batch14:${BUILD_NUMBER}'
+                    echo 'Pushed to Dockerhub'
+                }
+            }
+        }
+
+        stage('Update Deployment File') {
+            steps {
+                echo 'Updating Deployment File'
+                withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'githubtoken')]) {
+                    sh '''
+                        git config user.email "gorekarmadhu@gmail.com"
+                        git config user.name "Madhu"
+                        BUILD_NUMBER=${BUILD_NUMBER}
+                        sed -i "s/batch14:.*/batch14:${BUILD_NUMBER}/g" deploymentfiles/deployment.yml
+                        git add .
+                        git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                        git push https://${githubtoken}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                if (currentBuild.result == 'SUCCESS') {
+                    echo "Build #${env.BUILD_NUMBER} of ${env.JOB_NAME} succeeded."
+                } else {
+                    echo "Build #${env.BUILD_NUMBER} of ${env.JOB_NAME} failed."
+                }
+            }
+        }
+    }
+}
